@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { by639_1 } from "iso-language-codes";
 
 const MovieDetails = (props) => {
-  const [readMore, setReadMore] = useState(false);
   const trimInfo = (str, endIndex) => {
     return str.substring(0, endIndex);
   };
