@@ -23,6 +23,9 @@ const App = () => {
   const searchUrl = `${process.env.REACT_APP_BASE_URL}/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchedMovie}`;
 
   const [movieId, setMovieId] = useState(0);
+  const [reviews, setReviews] = useState({
+    authors: [],
+  });
   const [movieDetails, setMovieDetails] = useState({
     title: "",
     overview: "",
@@ -38,12 +41,19 @@ const App = () => {
     backdropPath: "",
   });
   const movieDetailsUrl = `${process.env.REACT_APP_BASE_URL}/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=credits`;
-
+   const review = `${process.env.REACT_APP_BASE_URL}/movie/${movieId}/reviews?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
   const getCurrentList = () => {
     axios.get(activeUrl).then((response) => {
       setCurrentArr(response.data.results);
     });
   };
+ 
+  axios.get(review).then((response) => {
+    // console.log(response.data.results);
+    setReviews({
+      authors: response.data.results,
+    });
+  });
 
   const fetchSearch = () => {
     axios.get(searchUrl).then((response) => {
@@ -148,7 +158,7 @@ const App = () => {
             isLoading ? (
               <Loading />
             ) : (
-              <MovieDetails movieDetails={movieDetails} />
+              <MovieDetails movieDetails={movieDetails} reviews={reviews} />
             )
           }
         />

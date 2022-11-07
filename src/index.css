@@ -274,6 +274,45 @@ nav {
   font-weight: 600;
 }
 
+
+.review-container{
+  margin: 50px 100px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.review-title {
+  font-size: 2rem;
+  color: white;
+}
+
+.review-card{
+  margin: 50px 80px;
+  padding: 0px 15px;
+  width: 800px;
+  background-color: #171717;
+  color: white;
+  border: 3px solid #ffe227;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+
+}
+.author-name{
+  text-align: left;
+  padding-left: 10px;
+}
+.author-rating{
+  text-align: left;
+  padding-left: 10px;
+}
+
+
 .cast span:nth-child(1){
   font-size: 1.1rem;
   color:#aaaaaa;

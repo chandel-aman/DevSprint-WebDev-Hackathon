@@ -131,6 +131,20 @@ const MovieDetails = (props) => {
           </p>
         </div>
       </div>
+        <div>
+        <h2 className='review-title'>Reviews</h2>
+        <div className='review-container'>
+          {props.reviews.authors.map((review) => (
+            <div className='review-card'>
+              <h3 className='author-name'>{review.author}</h3>
+              <h4 className='author-rating'>
+                Rating: {review.author_details.rating}/10
+              </h4>
+              <p className='author-content'>{review.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="cast-container">
         <h2 className="cast-title">Cast</h2>
         <div className="actor-container">
