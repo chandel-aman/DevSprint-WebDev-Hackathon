@@ -222,7 +222,7 @@ nav {
 }
 
 .movie-poster {
-  width: 360px;
+  width: 100%;
   height: 540px;
 }
 
@@ -332,7 +332,6 @@ nav {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   gap: 40px;
 }
 
@@ -358,25 +357,22 @@ nav {
   font-size: 0.95rem;
 }
 
-/* Media Queries */
-/* @media screen and (min-width: 1200px) {
-  .movie-poster {
-    height: 100%;
+@media screen and (max-width: 1440px) {
+  .movie-details-overview{
+    display: flex;
+    flex-direction: row;
   }
-} */
 
-@media screen and (min-width: 1200px) {
   .movie-details {
     flex-direction: column;
   }
 
   .movie-poster {
-    width: 100%;
+    width: 360px;
   }
 
   .detail-container {
-    padding: 10px 50px 30px;
-    height: 540px;
+    height: 540px !important;
   }
 }
 
